@@ -1,7 +1,8 @@
 import { CounterTableProps } from '@/types/tableProps';
 import styles from './CounterTable.module.scss';
 import { ColdWaterIcon, HotWaterIcon } from './icons';
-import { CounterTableSkeleton } from '../CounterTableSkeleton/CounterTableSkeleton';
+import { CounterTableSkeleton } from '../CounterTableSkeleton/index';
+import { PaginationBlock } from '../PaginationBlock';
 
 export const CounterTable = (props: CounterTableProps) => {
   const { meters, loading, onDelete, currentPage, setCurrentPage, totalPage } =
@@ -52,19 +53,11 @@ export const CounterTable = (props: CounterTableProps) => {
         </tbody>
       </table>
       <div className={styles.table__footer}>
-        <button
-          onClick={() => setCurrentPage(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          ←
-        </button>
-
-        <button
-          onClick={() => setCurrentPage(currentPage + 1)}
-          disabled={currentPage === totalPage}
-        >
-          →
-        </button>
+        <PaginationBlock
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalPage={totalPage}
+        />
       </div>
     </div>
   );

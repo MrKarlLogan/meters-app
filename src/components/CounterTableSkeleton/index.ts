@@ -1,0 +1,1 @@
+export { CounterTableSkeleton } from './CounterTableSkeleton';

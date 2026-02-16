@@ -1,0 +1,26 @@
+.pagination {
+  inline-size: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+
+  &__button {
+    inline-size: 32px;
+    aspect-ratio: 1;
+    font: {
+      family: 'Roboto', sans-serif;
+      weight: 400;
+      size: 14px;
+    }
+    color: #1f2939;
+    padding: 8px;
+    border: 1px solid #ced5de;
+    border-radius: 6px;
+
+    &_active {
+      background-color: #f2f5f8;
+    }
+  }
+}
