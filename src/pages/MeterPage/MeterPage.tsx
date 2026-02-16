@@ -1,11 +1,9 @@
-import CounterTable from '../../components/CounterTable/CounterTable';
+import { CounterTable } from '@components/CounterTable/index';
 import styles from './MeterPage.module.scss';
 
-const MeterPage = () => (
+export const MeterPage = () => (
   <div className={styles.container}>
     <h1 className={styles.container__title}>Список счётчиков</h1>
     <CounterTable />
   </div>
 );
-
-export default MeterPage;

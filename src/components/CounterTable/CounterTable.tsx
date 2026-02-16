@@ -1,6 +1,6 @@
 import styles from './CounterTable.module.scss';
 
-const CounterTable = () => {
+export const CounterTable = () => {
   return (
     <div className={styles.wrapper}>
       <table className={styles.table}>
@@ -21,5 +21,3 @@ const CounterTable = () => {
     </div>
   );
 };
-
-export default CounterTable;

@@ -1,5 +1,5 @@
-import MetterPage from './pages/MeterPage/MeterPage';
+import { MeterPage } from './pages/MeterPage/index';
 
-const App = () => <MetterPage />;
+const App = () => <MeterPage />;
 
 export default App;
