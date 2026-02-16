@@ -5,7 +5,7 @@ const API_BASE_URL = '/api';
 const areasCache = new Map<string, Area>([]);
 
 export const meterApi = {
-  async getMeters(limit: number, offset: number) {
+  async getMeters(offset: number, limit: number) {
     const response = await fetch(
       `${API_BASE_URL}/meters/?limit=${limit}&offset=${offset}`
     );

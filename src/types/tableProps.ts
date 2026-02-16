@@ -13,4 +13,7 @@ export interface CounterTableProps {
   meters: TableMeter[];
   loading: boolean;
   onDelete: (id: string) => void;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
+  totalPage: number;
 }

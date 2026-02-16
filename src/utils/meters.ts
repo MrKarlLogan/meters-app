@@ -1,7 +1,7 @@
 import { meterApi } from '@/api/meterApi';
 
-export const LoadMetesData = async (limit: number = 20, offset: number = 0) => {
-  const metersData = await meterApi.getMeters(limit, offset);
+export const LoadMetesData = async (offset: number = 0, limit: number = 20) => {
+  const metersData = await meterApi.getMeters(offset, limit);
 
   const areaIds = [
     ...new Set(metersData.results.map((meter) => meter.area.id)),
@@ -10,7 +10,7 @@ export const LoadMetesData = async (limit: number = 20, offset: number = 0) => {
   const areasData = await meterApi.getAreas(areaIds);
   const areasMap = new Map(areasData.results.map((area) => [area?.id, area]));
 
-  return metersData.results.map((meter, index) => ({
+  const formattedMeters = metersData.results.map((meter, index) => ({
     id: meter.id,
     number: offset + index + 1,
     // type: в ТЗ лишь ХВС и ГВС, и приходят только они. Проверку на остальные типы из макета не делал.
@@ -29,4 +29,9 @@ export const LoadMetesData = async (limit: number = 20, offset: number = 0) => {
     // description: тестовые описания приходят странные, но реализация должна быть верная
     description: meter.description || '-',
   }));
+
+  return {
+    meters: formattedMeters,
+    total: metersData.count,
+  };
 };
