@@ -1,4 +1,4 @@
-interface Meter {
+export interface Meter {
   id: string;
   _type: Array<'ColdWaterAreaMeter' | 'HotWaterAreaMeter' | 'AreaMeter'>;
   area: {

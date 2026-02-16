@@ -9,8 +9,9 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://showroom.eis24.me/c300/api/v4/test',
+        target: 'https://showroom.eis24.me/c300/api/v4/test',
         changeOrigin: true,
+        secure: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
