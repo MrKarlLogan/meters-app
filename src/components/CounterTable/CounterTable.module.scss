@@ -4,24 +4,49 @@
   border: 1px solid #e0e5eb;
   border-radius: 16px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   .table {
     inline-size: 100%;
     border-collapse: collapse;
+    flex: 1;
 
     &__header {
       background-color: #e0e5eb;
+    }
+
+    &__element {
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e0e5eb;
+      }
     }
   }
 
   .table th,
   .table td {
-    padding: 8px;
+    padding: 8px 16px;
     text-align: left;
     font: {
       family: 'Roboto', sans-serif;
       size: 13px;
     }
     color: #697180;
+  }
+
+  .meterType {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .table__footer {
+    inline-size: 100%;
+    border-top: 1px solid #e0e5eb;
+    padding: 8px 16px;
+    align-self: end;
   }
 }

@@ -1,47 +1,11 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL;
+import { Area, AreasResponse, MetersResponse } from '@/types/api';
 
-interface Meter {
-  id: string;
-  _type: Array<'ColdWaterAreaMeter' | 'HotWaterAreaMeter' | 'AreaMeter'>;
-  area: {
-    id: string;
-  };
-  is_automatic: boolean | null;
-  description: string;
-  installation_date: string;
-  initial_values: number[];
-}
-
-interface MetersResponse {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: Meter[];
-}
-
-interface Area {
-  id: string;
-  number: number;
-  str_number: string;
-  str_number_full: string;
-  house: {
-    address: string;
-    id: string;
-    fias_addrobjs: string[];
-  };
-}
-
-interface AreasResponse {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: Area[];
-}
+const API_BASE_URL = '/api';
 
 const areasCache = new Map<string, Area>([]);
 
-export const api = {
-  async getMetters(offset: number = 0, limit: number = 20) {
+export const meterApi = {
+  async getMeters(limit: number, offset: number) {
     const response = await fetch(
       `${API_BASE_URL}/meters/?limit=${limit}&offset=${offset}`
     );
