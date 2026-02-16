@@ -1,0 +1,12 @@
+@import '@styles/reset.scss';
+@import '@styles/fonts.scss';
+
+body {
+  inline-size: 100%;
+  block-size: 100dvh;
+  display: flex;
+
+  #root {
+    flex: 1;
+  }
+}

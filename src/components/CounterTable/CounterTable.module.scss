@@ -1,0 +1,27 @@
+.wrapper {
+  inline-size: 100%;
+  block-size: 100%;
+  border: 1px solid #e0e5eb;
+  border-radius: 16px;
+  overflow: hidden;
+
+  .table {
+    inline-size: 100%;
+    border-collapse: collapse;
+
+    &__header {
+      background-color: #e0e5eb;
+    }
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 13px;
+    }
+    color: #697180;
+  }
+}

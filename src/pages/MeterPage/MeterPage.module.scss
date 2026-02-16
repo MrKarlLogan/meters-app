@@ -1,0 +1,19 @@
+.container {
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: #f8f9fa;
+  padding: 16px;
+  // Поменять на миксин
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    font: {
+      family: Roboto, sans-serif;
+      weight: 500;
+      size: 24px;
+    }
+    color: #1f2939;
+  }
+}
