@@ -45,10 +45,12 @@ export const meterApi = {
     };
   },
 
+  // Из-за CORS не получается воспользоться API с методом DELETE. Прилетает ошибка CORS, через Postman всё работает.
   async deleteMeter(meterId: string) {
-    const response = await fetch(`${API_BASE_URL}/meters/${meterId}/`, {
+    const response = await fetch(`${API_BASE_URL}/meters/${meterId}`, {
       method: 'DELETE',
     });
     if (!response.ok) throw new Error('Произошла ошибка при удалении счётчика');
+    return response;
   },
 };

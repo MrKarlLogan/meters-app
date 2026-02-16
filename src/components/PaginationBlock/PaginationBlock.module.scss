@@ -22,5 +22,9 @@
     &_active {
       background-color: #f2f5f8;
     }
+
+    &:disabled {
+      cursor: default;
+    }
   }
 }
