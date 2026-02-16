@@ -1,14 +1,12 @@
 import { CounterTableProps } from '@/types/tableProps';
 import styles from './CounterTable.module.scss';
-import { ColdWaterIcon, HotWaterIcon } from './icons';
+import { ColdWaterIcon, HotWaterIcon, TrashIcon } from './icons';
 import { CounterTableSkeleton } from '../CounterTableSkeleton/index';
 import { PaginationBlock } from '../PaginationBlock';
 
 export const CounterTable = (props: CounterTableProps) => {
   const { meters, loading, onDelete, currentPage, setCurrentPage, totalPage } =
     props;
-
-  console.log(onDelete);
 
   return (
     <div className={styles.wrapper}>
@@ -22,6 +20,7 @@ export const CounterTable = (props: CounterTableProps) => {
             <th>Текущие показания</th>
             <th>Адрес</th>
             <th>Примечание</th>
+            <th></th>
           </tr>
         </thead>
         <tbody className={styles.table__body}>
@@ -48,6 +47,15 @@ export const CounterTable = (props: CounterTableProps) => {
                   <td>{meter.value}</td>
                   <td>{meter.address}</td>
                   <td>{meter.description}</td>
+                  <td>
+                    <button
+                      type="button"
+                      onClick={() => onDelete(meter.id)}
+                      className={styles.deleteButton}
+                    >
+                      <TrashIcon />
+                    </button>
+                  </td>
                 </tr>
               ))}
         </tbody>

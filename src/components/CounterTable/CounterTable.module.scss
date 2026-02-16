@@ -9,6 +9,45 @@
   justify-content: center;
   align-items: center;
 
+  .trashIcon {
+    color: #ff4444;
+    transition: color 0.2s;
+  }
+
+  .deleteButton {
+    inline-size: 38px;
+    block-size: 38px;
+    background-color: #fee3e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    margin-left: auto;
+    border-radius: 8px;
+    transition: 0.2s;
+
+    svg {
+      color: #c53030;
+    }
+
+    &:hover {
+      background-color: #fed7d7;
+
+      svg {
+        color: #9b2c2c;
+      }
+    }
+
+    &:disabled {
+      background-color: transparent;
+
+      svg {
+        color: #9da6b4;
+      }
+    }
+  }
+
   .table {
     inline-size: 100%;
     border-collapse: collapse;
@@ -22,7 +61,13 @@
       cursor: pointer;
 
       &:hover {
-        background-color: #e0e5eb;
+        background-color: #f7f8f9;
+        outline: 1px solid #f2f5f8;
+
+        .deleteButton {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
   }
