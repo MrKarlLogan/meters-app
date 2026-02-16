@@ -1,32 +1,37 @@
-// Анимация пульсации
-@keyframes pulse {
+@keyframes shimmer {
   0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
+    background-position: -200% 0;
   }
   100% {
-    opacity: 1;
+    background-position: 200% 0;
   }
 }
 
 .skeletonRow {
+  display: table;
+  inline-size: 100%;
+  table-layout: fixed;
+
+  td {
+    padding: 8px 16px;
+  }
+
   .skeleton {
     height: 20px;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, #e8ecf2 25%, #d0d8e4 50%, #e8ecf2 75%);
     background-size: 200% 100%;
-    animation: pulse 1.5s ease-in-out infinite;
-    border-radius: 4px;
+    animation: shimmer 1.5s infinite;
+    border-radius: 6px;
   }
 
   .skeletonCircle {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, #e8ecf2 25%, #d0d8e4 50%, #e8ecf2 75%);
     background-size: 200% 100%;
-    animation: pulse 1.5s ease-in-out infinite;
+    animation: shimmer 1.5s infinite;
+    flex-shrink: 0;
   }
 
   .meterType {
@@ -35,7 +40,13 @@
     gap: 8px;
   }
 
-  td {
-    padding: 12px 16px;
+  .deleteButtonSkeleton {
+    inline-size: 38px;
+    block-size: 38px;
+    background: linear-gradient(90deg, #e8ecf2 25%, #d0d8e4 50%, #e8ecf2 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+    margin-left: auto;
   }
 }

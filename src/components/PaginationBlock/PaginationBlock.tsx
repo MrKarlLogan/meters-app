@@ -6,6 +6,12 @@ export const PaginationBlock = (props: PaginationProps) => {
 
   const getPageNumber = () => {
     const pages: (string | number)[] = [];
+    if (!totalPage || totalPage === 0) {
+      return Array.from({ length: 7 }, (_, i) => {
+        if (i === 0) return 1;
+        return '...';
+      });
+    }
 
     if (totalPage <= 7) {
       for (let i = 1; i <= totalPage; i++) {

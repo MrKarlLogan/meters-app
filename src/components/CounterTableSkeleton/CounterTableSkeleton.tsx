@@ -13,19 +13,22 @@ export const CounterTableSkeleton = () => {
         </div>
       </td>
       <td>
+        <div className={styles.skeleton} style={{ width: '90px' }} />
+      </td>
+      <td>
         <div className={styles.skeleton} style={{ width: '80px' }} />
       </td>
       <td>
-        <div className={styles.skeleton} style={{ width: '60px' }} />
-      </td>
-      <td>
-        <div className={styles.skeleton} style={{ width: '50px' }} />
+        <div className={styles.skeleton} style={{ width: '70px' }} />
       </td>
       <td>
         <div className={styles.skeleton} style={{ width: '200px' }} />
       </td>
       <td>
         <div className={styles.skeleton} style={{ width: '150px' }} />
+      </td>
+      <td>
+        <div className={styles.deleteButtonSkeleton} />
       </td>
     </tr>
   );
