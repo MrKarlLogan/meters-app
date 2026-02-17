@@ -10,6 +10,7 @@
 .skeletonRow {
   display: table;
   inline-size: 100%;
+  block-size: calc(55px + 2px);
   table-layout: fixed;
 
   td {
