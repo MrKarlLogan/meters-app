@@ -9,6 +9,8 @@
   &__button {
     inline-size: 32px;
     aspect-ratio: 1;
+    user-select: none;
+
     font: {
       family: 'Roboto', sans-serif;
       weight: 400;

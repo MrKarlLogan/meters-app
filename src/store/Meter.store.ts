@@ -1,8 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 import { Meter } from '@/types/api';
-import { RootStore } from './RootStore';
+import { RootStore } from './RootStore.store';
 
-export class MeterModel {
+export class MeterStore {
   id: string;
   number: number;
   type: string;
@@ -62,7 +62,7 @@ export const createMeterModelFromApi = (
   offset: number,
   rootStore: RootStore
 ) => {
-  return new MeterModel(apiMeter, index, offset, rootStore);
+  return new MeterStore(apiMeter, index, offset, rootStore);
 };
 
-export type IMeterModel = MeterModel;
+export type IMeterModel = MeterStore;

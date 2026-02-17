@@ -1,7 +1,7 @@
 import { Area } from '@/types/api';
 import { makeAutoObservable } from 'mobx';
 
-export class AreaModel {
+export class AreaStore {
   id: string;
   number: number;
   str_number: string;
@@ -24,5 +24,5 @@ export class AreaModel {
 }
 
 export const createAreaModelFromApi = (apiArea: Area) => {
-  return new AreaModel(apiArea);
+  return new AreaStore(apiArea);
 };

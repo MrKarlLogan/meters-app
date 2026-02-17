@@ -1,11 +1,11 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { MeterModel, createMeterModelFromApi } from './MeterModel';
-import { AreaModel, createAreaModelFromApi } from './AreaModel';
+import { MeterStore, createMeterModelFromApi } from './Meter.store';
+import { AreaStore, createAreaModelFromApi } from './Area.store';
 import { Meter, Area } from '@/types/api';
 
 export class RootStore {
-  meters: MeterModel[] = [];
-  areas: Map<string, AreaModel> = new Map();
+  meters: MeterStore[] = [];
+  areas: Map<string, AreaStore> = new Map();
   loading: boolean = false;
   currentPage: number = 1;
   totalCount: number = 0;
@@ -56,7 +56,7 @@ export class RootStore {
     }
   }
 
-  addMeter(meterModel: MeterModel) {
+  addMeter(meterModel: MeterStore) {
     this.meters = [...this.meters, meterModel];
   }
 
