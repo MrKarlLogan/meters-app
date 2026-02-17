@@ -42,9 +42,6 @@ export const MeterPage = observer(() => {
         meters={meters}
         loading={store.loading}
         onDelete={handleDelete}
-        currentPage={store.currentPage}
-        setCurrentPage={store.setPage}
-        totalPage={store.totalPages}
       />
     </div>
   );

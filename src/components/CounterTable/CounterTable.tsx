@@ -5,8 +5,7 @@ import { CounterTableSkeleton } from '../CounterTableSkeleton/index';
 import { PaginationBlock } from '../PaginationBlock';
 
 export const CounterTable = (props: CounterTableProps) => {
-  const { meters, loading, onDelete, currentPage, setCurrentPage, totalPage } =
-    props;
+  const { meters, loading, onDelete } = props;
 
   return (
     <div className={styles.wrapper}>
@@ -62,11 +61,7 @@ export const CounterTable = (props: CounterTableProps) => {
         </tbody>
       </table>
       <div className={styles.table__footer}>
-        <PaginationBlock
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          totalPage={totalPage}
-        />
+        <PaginationBlock />
       </div>
     </div>
   );

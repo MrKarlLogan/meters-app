@@ -1,5 +1,3 @@
-import { PaginationProps } from './paginationProps';
-
 export interface TableMeter {
   id: string;
   number: number;
@@ -11,7 +9,7 @@ export interface TableMeter {
   description: string;
 }
 
-export interface CounterTableProps extends PaginationProps {
+export interface CounterTableProps {
   meters: TableMeter[];
   loading: boolean;
   onDelete: (id: string) => void;
