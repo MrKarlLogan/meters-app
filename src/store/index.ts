@@ -1,23 +1,25 @@
-import { RootStore, IRootStore } from './models/RootStore';
+import { RootStore } from './RootStore';
 import { createContext, useContext } from 'react';
 
-let store: IRootStore | null = null;
+let store: RootStore | null = null;
 
-export const initializeStore = (): IRootStore => {
+export const initializeStore = (): RootStore => {
   if (!store) {
-    store = RootStore.create({});
+    store = new RootStore();
   }
   return store;
 };
 
-export const RootStoreContext = createContext<IRootStore>({} as IRootStore);
+export const RootStoreContext = createContext<RootStore>({} as RootStore);
 
-export const useStore = (): IRootStore => {
+export const useStore = (): RootStore => {
   const store = useContext(RootStoreContext);
+
   if (!store) {
     throw new Error(
       'useStore должен использоваться внутри RootStoreContext.Provider'
     );
   }
+
   return store;
 };

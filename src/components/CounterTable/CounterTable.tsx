@@ -60,14 +60,14 @@ export const CounterTable = (props: CounterTableProps) => {
                 </tr>
               ))}
         </tbody>
-        <tfoot className={styles.table__footer}>
-          <PaginationBlock
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            totalPage={totalPage}
-          />
-        </tfoot>
       </table>
+      <div className={styles.table__footer}>
+        <PaginationBlock
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalPage={totalPage}
+        />
+      </div>
     </div>
   );
 };
