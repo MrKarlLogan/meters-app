@@ -4,28 +4,28 @@ export const CounterTableSkeleton = () => {
   return (
     <tr className={styles.skeletonRow}>
       <td>
-        <div className={styles.skeleton} style={{ width: '30px' }} />
+        <div className={styles.skeleton} />
       </td>
       <td>
         <div className={styles.meterType}>
           <div className={styles.skeletonCircle} />
-          <div className={styles.skeleton} style={{ width: '40px' }} />
+          <div className={styles.skeleton} />
         </div>
       </td>
       <td>
-        <div className={styles.skeleton} style={{ width: '90px' }} />
+        <div className={styles.skeleton} />
       </td>
       <td>
-        <div className={styles.skeleton} style={{ width: '80px' }} />
+        <div className={styles.skeleton} />
       </td>
       <td>
-        <div className={styles.skeleton} style={{ width: '70px' }} />
+        <div className={styles.skeleton} />
       </td>
       <td>
-        <div className={styles.skeleton} style={{ width: '200px' }} />
+        <div className={styles.skeleton} />
       </td>
       <td>
-        <div className={styles.skeleton} style={{ width: '150px' }} />
+        <div className={styles.skeleton} />
       </td>
       <td>
         <div className={styles.deleteButtonSkeleton} />

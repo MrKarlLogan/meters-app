@@ -39,17 +39,20 @@ export const PaginationBlock = (props: PaginationProps) => {
   };
 
   return (
-    <div className={styles.pagination}>
+    <nav className={styles.pagination}>
       {getPageNumber().map((page: number | string, index: number) => (
         <button
           key={index}
           onClick={() => typeof page === 'number' && setCurrentPage(page)}
           disabled={page === '...'}
           className={`${styles.pagination__button} ${currentPage === page ? styles.pagination__button_active : ''}`}
+          aria-label={
+            page === '...' ? 'Промежуточные страницы' : `Страница ${page}`
+          }
         >
           {page}
         </button>
       ))}
-    </div>
+    </nav>
   );
 };

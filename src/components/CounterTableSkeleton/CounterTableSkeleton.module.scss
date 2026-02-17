@@ -17,7 +17,8 @@
   }
 
   .skeleton {
-    height: 20px;
+    inline-size: 100%;
+    block-size: 20px;
     background: linear-gradient(90deg, #e8ecf2 25%, #d0d8e4 50%, #e8ecf2 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
@@ -25,8 +26,8 @@
   }
 
   .skeletonCircle {
-    width: 24px;
-    height: 24px;
+    inline-size: 24px;
+    block-size: 24px;
     border-radius: 50%;
     background: linear-gradient(90deg, #e8ecf2 25%, #d0d8e4 50%, #e8ecf2 75%);
     background-size: 200% 100%;

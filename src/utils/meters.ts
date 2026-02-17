@@ -1,5 +1,6 @@
 import { meterApi } from '@/api/meterApi';
 
+//Функция загрузки, которую использовал до Mobx
 export const LoadMetesData = async (offset: number = 0, limit: number = 20) => {
   const metersData = await meterApi.getMeters(offset, limit);
 

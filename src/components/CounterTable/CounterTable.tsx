@@ -19,8 +19,7 @@ export const CounterTable = (props: CounterTableProps) => {
             <th>Автоматический</th>
             <th>Текущие показания</th>
             <th>Адрес</th>
-            <th>Примечание</th>
-            <th></th>
+            <th colSpan={2}>Примечание</th>
           </tr>
         </thead>
         <tbody className={styles.table__body}>
@@ -52,8 +51,10 @@ export const CounterTable = (props: CounterTableProps) => {
                       type="button"
                       onClick={() => onDelete(meter.id)}
                       className={styles.deleteButton}
+                      aria-label={`Удалить счетчик ${meter.type} по адресу ${meter.address}`}
+                      title="Удалить"
                     >
-                      <TrashIcon />
+                      <TrashIcon aria-hidden="true" />
                     </button>
                   </td>
                 </tr>
