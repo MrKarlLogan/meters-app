@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { Meter } from '@/types/api';
 import { RootStore } from './RootStore.store';
+import { meterApi } from '@/api/meterApi';
 
 export class MeterStore {
   id: string;
@@ -42,7 +43,6 @@ export class MeterStore {
 
   async delete() {
     try {
-      const { meterApi } = await import('@/api/meterApi');
       await meterApi.deleteMeter(this.id);
       this.rootStore.removeMeter(this.id);
       await this.rootStore.loadMeters(this.rootStore.currentPage);

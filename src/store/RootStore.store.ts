@@ -2,6 +2,7 @@ import { makeAutoObservable, runInAction } from 'mobx';
 import { MeterStore, createMeterModelFromApi } from './Meter.store';
 import { AreaStore, createAreaModelFromApi } from './Area.store';
 import { Meter, Area } from '@/types/api';
+import { meterApi } from '@/api/meterApi';
 
 export class RootStore {
   meters: MeterStore[] = [];
@@ -18,7 +19,6 @@ export class RootStore {
   async loadMeters(page: number = 1) {
     this.loading = true;
     try {
-      const { meterApi } = await import('@/api/meterApi');
       const offset = (page - 1) * 20;
       const data = await meterApi.getMeters(offset, 20);
 
