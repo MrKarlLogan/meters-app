@@ -10,7 +10,7 @@ export const initializeStore = (): RootStore => {
   return store;
 };
 
-export const RootStoreContext = createContext<RootStore>({} as RootStore);
+export const RootStoreContext = createContext<RootStore | null>(null);
 
 export const useStore = (): RootStore => {
   const store = useContext(RootStoreContext);

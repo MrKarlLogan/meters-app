@@ -44,7 +44,6 @@ export class MeterStore {
   async delete() {
     try {
       await meterApi.deleteMeter(this.id);
-      this.rootStore.removeMeter(this.id);
       await this.rootStore.loadMeters(this.rootStore.currentPage);
     } catch (error) {
       console.error('Ошибка удаления:', error);

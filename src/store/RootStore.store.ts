@@ -17,7 +17,10 @@ export class RootStore {
   }
 
   async loadMeters(page: number = 1) {
-    this.loading = true;
+    runInAction(() => {
+      this.loading = true;
+    });
+
     try {
       const offset = (page - 1) * 20;
       const data = await meterApi.getMeters(offset, 20);
@@ -58,12 +61,6 @@ export class RootStore {
 
   addMeter(meterModel: MeterStore) {
     this.meters = [...this.meters, meterModel];
-  }
-
-  removeMeter(id: string) {
-    this.meters = this.meters.filter((m) => m.id !== id);
-    this.totalCount -= 1;
-    this.totalPages = Math.ceil(this.totalCount / 20);
   }
 
   setPage(page: number) {

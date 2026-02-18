@@ -45,7 +45,7 @@ export const PaginationBlock = observer(() => {
         <button
           key={index}
           onClick={() => typeof page === 'number' && setPage(page)}
-          disabled={page === '...'}
+          disabled={page === '...' || page === currentPage}
           className={`${styles.pagination__button} ${currentPage === page ? styles.pagination__button_active : ''}`}
           aria-label={
             page === '...' ? 'Промежуточные страницы' : `Страница ${page}`
